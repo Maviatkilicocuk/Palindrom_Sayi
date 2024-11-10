@@ -1,0 +1,33 @@
+package Giris;
+import java.util.Scanner;
+public class Palindrom_Sayi {
+    static boolean isPalindrom(int number) {
+
+
+        int temp = number, reversveNumber = 0, lastNumber;
+
+        while (temp != 0) {
+            lastNumber = temp % 10;
+            reversveNumber = (reversveNumber * 10) + lastNumber;
+
+            temp /= 10;
+        }
+
+        if (number == reversveNumber) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int girdi;
+        System.out.print("Lütfen bir sayı giriniz = ");
+        girdi = input.nextInt();
+
+        System.out.print(girdi+ " palindrom mudur => " +isPalindrom(girdi));
+    }
+
+}
+
